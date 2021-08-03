@@ -51,48 +51,53 @@ const images = [
 const People = () => {
 	//create states
 	const [imageIndex, setImageIndex] = useState(0);
+	const [currCharacter, setCurrCharacter] = useState(0);
 	
-	const nextImage = (value) => {
-		if (value > 0) {
-			if (imageIndex > TOTAL_IMAGES - 1) {
-				setImageIndex(0);
-			}
-			else if (imageIndex < 0) {
-				setImageIndex(TOTAL_IMAGES + 1)
-			} else {
-				setImageIndex(imageIndex + 1);
-			}
-			setImageIndex(imageIndex + 1);
+	const nextImage = () => {
+		console.log('next image');
+		console.log('n1 imageIndex: ' + imageIndex);
+		if (imageIndex >= TOTAL_IMAGES - 1) {
+			console.log('setting image to 0')
+			// setImageSrc(images[0].src);
+			setImageIndex(0);
 		} else {
-			if (imageIndex > TOTAL_IMAGES - 1) {
-				setImageIndex(TOTAL_IMAGES + 1)
-			} else if (imageIndex < 0) {
-				setImageIndex(0)
-			} else {
-				setImageIndex(imageIndex - 1);
-			}
+			console.log('incrementing imageindex with 1');
+			// setImageSrc(images[imageIndex + 1].src);
+			setImageIndex(imageIndex + 1);
 		}
+		console.log('n2 imageIndex: ' + imageIndex);
 	}
-	
+
+	const previousImage = () => {
+		console.log('previous image');
+		console.log('p1 imageIndex: ' + imageIndex);
+		if (imageIndex <= 0) {
+			setImageIndex(8);
+		} else {
+			setImageIndex(imageIndex - 1);
+		}
+		console.log('p2 imageIndex: ' + imageIndex);
+	}
+
 	const selectCurrentImage = () => {
 		console.log('Selecting current image: ' + imageIndex);
+		setCurrCharacter(imageIndex);
 	}
 	
 	return (
 		<article className="App">
 			<section className="slideshow-container">
 
-				{/* Images of Star Wars characters with caption text and buttons */}
 				<figure className="slideItem">
-					<button className="previous">previous</button>
-					<img src={images[0].src} alt={images[0].name}/>
-					<button className="next">next</button>
-					<div className="textItem">{images[0].name}</div>
+					<button className="previous" onClick={previousImage}>previous</button>
+					<img className="currImage" src={images[imageIndex].src} alt={images[imageIndex].name} name={imageIndex}/>
+					<button className="next" onClick={nextImage}>next</button>
+					<div className="textItem">{images[imageIndex].name}</div>
 				</figure>
  
 			</section>
-			<div className="selectImage" onClick={selectCurrentImage}>
-				<button className="selectImageButton">
+			<div className="selectImage">
+				<button className="selectImageButton" onClick={selectCurrentImage}>
 					Select
 				</button>
 			</div>
