@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Interative Star Wars Story App
+
+Choose your own characters, planet and starship and discover "Star Wars: The Rescue Mission".
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
