@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 
+import Introduction from './story/Introduction';
 import Slideshow from './story/Slideshow';
-import { createPeopleList } from './story/people_helper';
-import { createStarshipsList } from './story/starship_helper';
-import { createPlanetsList } from './story/planet_helper';
+import ChapterOne from './story/ChapterOne';
+import ChapterTwo from './story/ChapterTwo';
+import ChapterThree from './story/ChapterThree';
+import Credits from './story/Credits';
+import { createPeopleList } from './story/helpers/people_helper';
+import { createStarshipsList } from './story/helpers/starship_helper';
+import { createPlanetsList } from './story/helpers/planet_helper';
 
 const Story = () => {
 	//define people, starships and planets
@@ -13,25 +18,21 @@ const Story = () => {
 
 	//create states
 	const [currChapter, setCurrChapter] = useState(0);
-	const [currCharacter, setCurrCharacter] = useState(peopleList[0]);
+	const [currCharacterOne, setCurrCharacterOne] = useState(peopleList[0]);
+	const [currCharacterTwo, setCurrCharacterTwo] = useState(peopleList[0]);
 	const [currPlanet, setCurrPlanet] = useState(planetsList[0]);
 	const [currStarship, setCurrStarship] = useState(starshipsList[0]);
 	
 	//functions
-	const submitChoices = () => {
-		console.log('submit choices');
-		console.log('remove submit button');
-		console.log('api, set values for next');
-		console.log('currCharacter: ' + currCharacter.name);
-		console.log('currPlanet: ' + currPlanet.name);
-		console.log('currStarship: ' + currStarship.name);
-		console.log('test eind');
+	const changeCurrCharacterOne = (newCharacter) => {
+		console.log('New char is: ' + newCharacter.name);
+		setCurrCharacterOne(newCharacter);
 	};
 
-	const changeCurrCharacter = (newCharacter) => {
-		console.log('New char is: ' + newCharacter.name);
-		setCurrCharacter(newCharacter);
-	};
+	const changeCurrCharacterTwo = (newCharacter) => {
+		console.log('New char is ' + newCharacter.name);
+		setCurrCharacterTwo(newCharacter);
+	}
 
 	const changeCurrPlanet = (newPlanet) => {
 		console.log('New char is: ' + newPlanet.name);
@@ -44,76 +45,49 @@ const Story = () => {
 	};
 
 	const nextChapter = () => {
-		setCurrChapter(currChapter + 1);
-	}
+		if (currChapter < 3) {
+			setCurrChapter(currChapter + 1);
+		}
+		if (currChapter === 3) {
+			setCurrChapter(currChapter + 1);
+			document.getElementById("nextChapter").style.display = "none";
+		}
+	};
 
 	return (
 		<div className="App">
 			{currChapter === 0 &&
 				<div className="Chapter">
-					<article>
-						<section>
-							<h1>
-								Create your own Star Wars Story
-							</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non pharetra tellus, eu euismod sem. Suspendisse magna libero, posuere eu suscipit sit amet, cursus quis enim. Nulla faucibus metus a ex sodales euismod sed ut metus. Aliquam imperdiet sed augue eget accumsan. Sed et dolor posuere, scelerisque lacus sed, eleifend neque. Donec tempus egestas ultricies. Pellentesque diam nisl, condimentum sit amet lectus gravida, faucibus posuere nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-							</p>
-							<p>
-								Mauris malesuada eu enim ut vehicula. Donec laoreet rhoncus turpis, id finibus sem consectetur eu. Nunc pharetra eros lorem, ut ullamcorper libero sodales condimentum. Praesent a eros eu enim fringilla viverra. Etiam sed cursus mauris, quis ullamcorper ex. Phasellus aliquet enim et enim pellentesque scelerisque. In egestas, magna eu vestibulum hendrerit, purus nisl efficitur orci, id consectetur nibh massa nec justo. Suspendisse eu augue convallis, commodo lacus et, finibus ipsum. Cras ac tristique orci. Duis at tempus est. Donec eleifend luctus hendrerit. Aliquam leo metus, mollis sed velit vitae, lobortis finibus odio.
-							</p>
-						</section>
-						<section>
-							<ul>
-								<li>Pick 1 Character</li>
-								<li>Pick 1 Planet</li>
-								<li>Pick 1 Starship</li>
-							</ul>
-						</section>
-					</article>
-					< Slideshow items={peopleList} current={currCharacter} onChange={changeCurrCharacter} />
+					<Introduction />
+					<Slideshow items={peopleList} current={currCharacterOne} onChange={changeCurrCharacterOne} />
 					<p>
-						Selected: {currCharacter.name}
+						Selected: {currCharacterOne.name}
 					</p>
-					< Slideshow items={planetsList} current={currPlanet} onChange={changeCurrPlanet} />
+					<Slideshow items={peopleList} current={currCharacterTwo} onChange={changeCurrCharacterTwo} />
 					<p>
-						Selected: {currPlanet.name}
+						Selected: {currCharacterTwo.name}
 					</p>
-					< Slideshow items={starshipsList} current={currStarship} onChange={changeCurrStarship} />
+					<Slideshow items={starshipsList} current={currStarship} onChange={changeCurrStarship} />
 					<p>
 						Selected: {currStarship.name}
 					</p>
-					<button id="submitChoices" onClick={submitChoices}>
-						Submit choices
-					</button>
+					<Slideshow items={planetsList} current={currPlanet} onChange={changeCurrPlanet} />
+					<p>
+						Selected: {currPlanet.name}
+					</p>
 				</div>
 			}
 			{currChapter === 1 &&
-				<div className="Chapter">
-					<article>
-						<p>
-							Chapter 1
-						</p>
-					</article>
-				</div>
+				<ChapterOne characterOne={currCharacterOne} characterTwo={currCharacterOne}/>
 			}
 			{currChapter === 2 &&
-				<div className="Chapter">
-					<article>
-						<p>
-							Chapter 2
-						</p>
-					</article>
-				</div>
+				<ChapterTwo starship={currStarship}/>
 			}
 			{currChapter === 3 &&
-				<div className="Chapter">
-					<article>
-						<p>
-							Chapter 3
-						</p>
-					</article>
-				</div>
+				<ChapterThree planet={currPlanet}/>
+			}
+			{currChapter === 4 &&
+				<Credits />
 			}
 			<button id="nextChapter" onClick={nextChapter}>
 				Next
