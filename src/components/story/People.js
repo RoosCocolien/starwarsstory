@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+
+//images
 import LukeSkywalker from "../../images/people/1.png";
 import C3PO from "../../images/people/2.png";
 import R2D2 from "../../images/people/3.png";
@@ -7,8 +10,7 @@ import ObiWanKenobi from "../../images/people/10.png";
 import Chewbacca from "../../images/people/13.png";
 import HanSolo from "../../images/people/14.png";
 import MasterYoda from "../../images/people/20.png";
-import React, { useState } from 'react';
-const TOTAL_IMAGES = 9;
+const TOTAL_CHARACTERS = 9;
 const images = [
 	{
 		src : LukeSkywalker,
@@ -56,7 +58,7 @@ const People = () => {
 	const nextImage = () => {
 		console.log('next image');
 		console.log('n1 imageIndex: ' + imageIndex);
-		if (imageIndex >= TOTAL_IMAGES - 1) {
+		if (imageIndex >= TOTAL_CHARACTERS - 1) {
 			console.log('setting image to 0')
 			// setImageSrc(images[0].src);
 			setImageIndex(0);
@@ -72,7 +74,7 @@ const People = () => {
 		console.log('previous image');
 		console.log('p1 imageIndex: ' + imageIndex);
 		if (imageIndex <= 0) {
-			setImageIndex(8);
+			setImageIndex(TOTAL_CHARACTERS - 1);
 		} else {
 			setImageIndex(imageIndex - 1);
 		}
@@ -90,7 +92,7 @@ const People = () => {
 
 				<figure className="slideItem">
 					<button className="previous" onClick={previousImage}>previous</button>
-					<img className="currImage" src={images[imageIndex].src} alt={images[imageIndex].name} name={imageIndex}/>
+					<img className="currImage" src={images[imageIndex].src} alt={images[imageIndex].name}/>
 					<button className="next" onClick={nextImage}>next</button>
 					<div className="textItem">{images[imageIndex].name}</div>
 				</figure>
