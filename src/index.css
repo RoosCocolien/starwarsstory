@@ -1,8 +1,26 @@
+@font-face {
+    font-family: 'star_jediregular';
+    src: url('./fonts/starjedi-webfont.woff2') format('woff2'),
+         url('./fonts/starjedi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'star_jedi_hollowregular';
+    src: url('./fonts/starjhol-webfont.woff2') format('woff2'),
+         url('./fonts/starjhol-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +28,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+	font-family: 'star_jediregular';
+	font-size: 3em;
 }

@@ -7,6 +7,9 @@ function App() {
 			<h1>
 				STAR WARS
 			</h1>
+			<p>
+				An interactive Star Wars Story
+			</p>
 		</header>
     </div>
   );
