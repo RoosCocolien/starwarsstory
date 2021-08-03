@@ -8,12 +8,14 @@ import { createPlanetsList } from './story/planet_helper';
 const Story = () => {
 	//define people, starships and planets
 	const peopleList = createPeopleList();
-	const starshipsList = createStarshipsList();
 	const planetsList = createPlanetsList();
-	console.log('peopleList: ' + peopleList[0].name);
+	const starshipsList = createStarshipsList();
+
 	//create states
 	const [currChapter, setCurrChapter] = useState(0);
 	const [currCharacter, setCurrCharacter] = useState(peopleList[0]);
+	const [currPlanet, setCurrPlanet] = useState(planetsList[0]);
+	const [currStarship, setCurrStarship] = useState(starshipsList[0]);
 	
 	//functions
 	const submitChoices = () => {
@@ -21,8 +23,25 @@ const Story = () => {
 		console.log('remove submit button');
 		console.log('api, set values for next');
 		console.log('currCharacter: ' + currCharacter.name);
+		console.log('currPlanet: ' + currPlanet.name);
+		console.log('currStarship: ' + currStarship.name);
 		console.log('test eind');
-	}
+	};
+
+	const changeCurrCharacter = (newCharacter) => {
+		console.log('New char is: ' + newCharacter.name);
+		setCurrCharacter(newCharacter);
+	};
+
+	const changeCurrPlanet = (newPlanet) => {
+		console.log('New char is: ' + newPlanet.name);
+		setCurrPlanet(newPlanet);
+	};
+
+	const changeCurrStarship = (newStarship) => {
+		console.log('New starship is: ' + newStarship.name);
+		setCurrStarship(newStarship);
+	};
 
 	const nextChapter = () => {
 		setCurrChapter(currChapter + 1);
@@ -52,11 +71,20 @@ const Story = () => {
 							</ul>
 						</section>
 					</article>
-					< Slideshow items={peopleList} />
-					< Slideshow items={planetsList} />
-					< Slideshow items={starshipsList} />
+					< Slideshow items={peopleList} current={currCharacter} onChange={changeCurrCharacter} />
+					<p>
+						Selected: {currCharacter.name}
+					</p>
+					< Slideshow items={planetsList} current={currPlanet} onChange={changeCurrPlanet} />
+					<p>
+						Selected: {currPlanet.name}
+					</p>
+					< Slideshow items={starshipsList} current={currStarship} onChange={changeCurrStarship} />
+					<p>
+						Selected: {currStarship.name}
+					</p>
 					<button id="submitChoices" onClick={submitChoices}>
-						Submit
+						Submit choices
 					</button>
 				</div>
 			}
@@ -72,7 +100,18 @@ const Story = () => {
 			{currChapter === 2 &&
 				<div className="Chapter">
 					<article>
-
+						<p>
+							Chapter 2
+						</p>
+					</article>
+				</div>
+			}
+			{currChapter === 3 &&
+				<div className="Chapter">
+					<article>
+						<p>
+							Chapter 3
+						</p>
 					</article>
 				</div>
 			}

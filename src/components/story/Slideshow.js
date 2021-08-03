@@ -6,35 +6,37 @@ const People = (props) => {
 	// const [currCharacter, setCurrCharacter] = useState(0);
 
 	const nextImage = () => {
-		console.log('next image');
-		console.log('n1 imageIndex: ' + imageIndex);
+		// console.log('next image');
+		// console.log('n1 imageIndex: ' + imageIndex);
 		if (imageIndex >= props.items.length - 1) {
-			console.log('setting image to 0')
+			// console.log('setting image to 0')
 			// setImageSrc(images[0].src);
 			setImageIndex(0);
 		} else {
-			console.log('incrementing imageindex with 1');
+			// console.log('incrementing imageindex with 1');
 			// setImageSrc(images[imageIndex + 1].src);
 			setImageIndex(imageIndex + 1);
 		}
-		console.log('n2 imageIndex: ' + imageIndex);
+		// console.log('n2 imageIndex: ' + imageIndex);
+		// props.onChange(props.items[imageIndex]);
 	}
 
 	const previousImage = () => {
-		console.log('previous image');
-		console.log('p1 imageIndex: ' + imageIndex);
+		// console.log('previous image');
+		// console.log('p1 imageIndex: ' + imageIndex);
 		if (imageIndex <= 0) {
 			setImageIndex(props.items.length - 1);
 		} else {
 			setImageIndex(imageIndex - 1);
 		}
-		console.log('p2 imageIndex: ' + imageIndex);
+		// console.log('p2 imageIndex: ' + imageIndex);
+		// props.onChange(props.items[imageIndex]);
 	}
 
-	// const selectCurrentImage = () => {
-	// 	console.log('Selecting current image: ' + imageIndex);
-	// 	setCurrCharacter(imageIndex);
-	// }
+	const selectCurrentItem = () => {
+		console.log('Selecting current image: ' + imageIndex);
+		props.onChange(props.items[imageIndex]);
+	}
 	
 	return (
 		<article className="App">
@@ -48,12 +50,9 @@ const People = (props) => {
 				</figure>
 
 				<div className="selectImage">
-					<p>
-						Selected: {props.items[imageIndex].name}
-					</p>
-					{/* <button className="selectImageButton" onClick={selectCurrentStarship}>
+					<button className="selectImageButton" onClick={selectCurrentItem}>
 						Submit
-					</button> */}
+					</button>
 				</div>			
 			</section>
 		</article>
