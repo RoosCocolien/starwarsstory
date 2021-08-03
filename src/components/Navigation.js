@@ -3,7 +3,7 @@ import logo from '../images/logo/Star_Wars_logo_open_yellow_small.png'
 
 const Navigation = () => {
 	return (
-		<div className="Navigation">
+		<nav className="Navigation">
 			<Link to="/">
 				<img src={logo} alt="StarWarsLogo"/>
 			</Link>
@@ -12,7 +12,7 @@ const Navigation = () => {
 					About
 				</button>
 			</Link>
-		</div>
+		</nav>
 	)
 }
 
