@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ButtonStyle, FooterStyle } from '../styles/App.styles';
+import { scrollToTop } from '../utils/scroll';
 
 const Footer = () => {
 	return (
@@ -7,7 +8,7 @@ const Footer = () => {
 			<p>
 				Made by Roos Cocolien, click
 					<Link to='/about'>
-						<ButtonStyle>
+						<ButtonStyle onClick={scrollToTop}>
 								here
 						</ButtonStyle>
 					</Link>

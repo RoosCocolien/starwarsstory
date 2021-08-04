@@ -10,6 +10,7 @@ import { createPeopleList } from './story/helpers/people_helper';
 import { createStarshipsList } from './story/helpers/starship_helper';
 import { createPlanetsList } from './story/helpers/planet_helper';
 import { ButtonStyle } from '../styles/App.styles';
+import { scrollToTop } from '../utils/scroll';
 
 const Story = () => {
 	//define people, starships and planets
@@ -25,26 +26,28 @@ const Story = () => {
 	const [currStarship, setCurrStarship] = useState(starshipsList[0]);
 	
 	//functions
+
+	
 	const changeCurrCharacterOne = (newCharacter) => {
 		console.log('New char is: ' + newCharacter.name);
 		setCurrCharacterOne(newCharacter);
 	};
-
+	
 	const changeCurrCharacterTwo = (newCharacter) => {
 		console.log('New char is ' + newCharacter.name);
 		setCurrCharacterTwo(newCharacter);
 	}
-
+	
 	const changeCurrPlanet = (newPlanet) => {
 		console.log('New char is: ' + newPlanet.name);
 		setCurrPlanet(newPlanet);
 	};
-
+	
 	const changeCurrStarship = (newStarship) => {
 		console.log('New starship is: ' + newStarship.name);
 		setCurrStarship(newStarship);
 	};
-
+	
 	const nextChapter = () => {
 		if (currChapter < 3) {
 			setCurrChapter(currChapter + 1);
@@ -52,8 +55,9 @@ const Story = () => {
 		if (currChapter === 3) {
 			setCurrChapter(currChapter + 1);
 		}
+		scrollToTop();
 	};
-
+	
 	return (
 		<article>
 			{currChapter === 0 &&
