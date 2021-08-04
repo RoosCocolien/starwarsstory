@@ -43,8 +43,9 @@ const People = (props) => {
 			<section className="slideshow-container">
 
 				<figure className="slideItem">
-					<button className="previous" onClick={previousImage}>previous</button>
 					<img className="currImage" src={props.items[imageIndex].src} alt={props.items[imageIndex].name}/>
+					<br/>
+					<button className="previous" onClick={previousImage}>previous</button>
 					<button className="next" onClick={nextImage}>next</button>
 					<div className="textItem">{props.items[imageIndex].name}</div>
 				</figure>

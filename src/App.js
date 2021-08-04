@@ -5,6 +5,7 @@ import {
 	Route
 } from 'react-router-dom';
 //styles (hier komt een GlobalStyle Component)
+import { GlobalStyle } from './styles/App.styles';
 import './App.css';
 //components
 import Navigation from './components/Navigation';
@@ -17,7 +18,9 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <Router>
+	<>
+	<GlobalStyle/>
+	<Router>
 		<Navigation />
 		<Switch>
 			<Route exact path='/' component={Home}></Route>
@@ -27,6 +30,7 @@ function App() {
 		</Switch>
 		<Footer />
 	</Router>
+	</>
   );
 }
 

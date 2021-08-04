@@ -1,18 +1,21 @@
 import { Link } from 'react-router-dom';
-import logo from '../images/logo/Star_Wars_logo_open_yellow_small.png'
+import logo from '../images/logo/Star_Wars_logo_open_yellow_small.png';
+import { Menu } from 'semantic-ui-react';
+import { ButtonStyle } from '../styles/App.styles';
 
 const Navigation = () => {
 	return (
-		<nav className="Navigation">
-			<Link to="/">
+		<Menu >
+			<Menu.Item as={Link} to="/">
 				<img src={logo} alt="StarWarsLogo"/>
-			</Link>
-			<Link to='/about'>
-				<button>
+				Home
+			</Menu.Item>
+			<ButtonStyle>
+				<Menu.Item as={Link} to="/about">
 					About
-				</button>
-			</Link>
-		</nav>
+				</Menu.Item>
+			</ButtonStyle>
+		</Menu>
 	)
 }
 
