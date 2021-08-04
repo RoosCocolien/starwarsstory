@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 //styles (hier komt een GlobalStyle Component)
 import { GlobalStyle } from './styles/App.styles';
-import './App.css';
+import { GlobalFonts } from './fonts/fonts';
 //components
 import Navigation from './components/Navigation';
 import Home from './components/Home';
@@ -19,7 +19,8 @@ import Contact from './components/Contact';
 function App() {
   return (
 	<>
-	<GlobalStyle/>
+	<GlobalStyle />
+	<GlobalFonts />
 	<Router>
 		<Navigation />
 		<Switch>
