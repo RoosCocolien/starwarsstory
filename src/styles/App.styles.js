@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 		background-attachment: fixed;
 		font-family: 'Jost', sans-serif;
 		font-weight: 300;
-		color: white;
+		color: rgb(185,185,185);
 		text-align: center;
 		align-items: center;
 	}
@@ -41,12 +41,29 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const ButtonStyle = styled.button`
-	background: transparant;
+	background-color: rgba(0, 0, 0, 0);
+	font-family: 'star_jedi_hollowregular';
 	border-radius: 3px;
-	border: 2px solid yellow;
-	color: white;
-	margin: 0 1em;
-	padding: 0.25em 1em;
+	border: 1px solid rgba(255, 197, 0, 0.5);
+	color: rgb(255,197,0);
+	margin: 1em 0.5em;
+	padding: 0.25em 0.5em;
+	&:hover {
+		background-color: rgba(255, 197, 0, 0.5);
+	}
+	&:active {
+		color: black;
+	}
+`
+
+export const FooterStyle = styled.footer`
+	background-color: rgba(31, 31, 31, 0.5);
+	width: 100%;
+	position: absolute;
+	margin-top: 20px;
+	font-size: 0.8em;
+	color: rgb(160,160,160);
+	height: 100px;
 `
 
 export const SlideshowWrapper = styled.article`

@@ -9,11 +9,11 @@ const Navigation = () => {
 			<Menu.Item as={Link} to="/">
 				<img src={logo} alt="StarWarsLogo"/>
 			</Menu.Item>
-			<ButtonStyle>
-				<Menu.Item as={Link} to="/about" position="right">
+			<Menu.Item as={Link} to="/about" position="right">
+				<ButtonStyle>
 					About
-				</Menu.Item>
-			</ButtonStyle>
+				</ButtonStyle>
+			</Menu.Item>
 		</Menu>
 	)
 }

@@ -9,6 +9,7 @@ import Credits from './story/Credits';
 import { createPeopleList } from './story/helpers/people_helper';
 import { createStarshipsList } from './story/helpers/starship_helper';
 import { createPlanetsList } from './story/helpers/planet_helper';
+import { ButtonStyle } from '../styles/App.styles';
 
 const Story = () => {
 	//define people, starships and planets
@@ -50,7 +51,6 @@ const Story = () => {
 		}
 		if (currChapter === 3) {
 			setCurrChapter(currChapter + 1);
-			document.getElementById("nextChapter").style.display = "none";
 		}
 	};
 
@@ -89,9 +89,11 @@ const Story = () => {
 			{currChapter === 4 &&
 				<Credits />
 			}
-			<button id="nextChapter" onClick={nextChapter}>
-				Next
-			</button>
+			{currChapter < 4 &&
+				<ButtonStyle onClick={nextChapter}>
+					Next
+				</ButtonStyle>
+			}
 		</div>
 	);
 };

@@ -16,15 +16,15 @@ const ChapterThree = (props) => {
 		console.log('end: ', planetData);
 	}, []);
 
-	const showData = () => {
-		console.log('showData planetData: ', planetData);
-	}
+	// const showData = () => {
+	// 	console.log('showData planetData: ', planetData);
+	// }
 
 	return (
 		<div className="ChapterThree">
 			<article>
 				<h1>Chapter 3: The arrival</h1>
-				<button onClick={showData}>showData</button>
+				{/* <button onClick={showData}>showData</button> */}
 				{!planetData.name &&
 					<article className="paragraphStory">
 						<p>Loading...</p>

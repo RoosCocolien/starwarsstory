@@ -81,14 +81,17 @@ const ChapterOne = (props) => {
 						</p>
 					</article>
 				}
-				{(homePlanetOne.name && homePlanetTwo.name)&&
-					<article className="paragraphStory">
-						<p>Home World {characterOneData.name} is {homePlanetOne.name}</p>
-						<p>Home World {characterTwoData.name} is {homePlanetTwo.name}</p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non pharetra tellus, eu euismod sem. Suspendisse magna libero, posuere eu suscipit sit amet, cursus quis enim. Nulla faucibus metus a ex sodales euismod sed ut metus. Aliquam imperdiet sed augue eget accumsan. Sed et dolor posuere, scelerisque lacus sed, eleifend neque. Donec tempus egestas ultricies. Pellentesque diam nisl, condimentum sit amet lectus gravida, faucibus posuere nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.							
-						</p>
-					</article>
+				{(homePlanetOne.name && homePlanetTwo.name)
+					?
+						<article className="paragraphStory">
+							<p>Home World {characterOneData.name} is {homePlanetOne.name}</p>
+							<p>Home World {characterTwoData.name} is {homePlanetTwo.name}</p>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non pharetra tellus, eu euismod sem. Suspendisse magna libero, posuere eu suscipit sit amet, cursus quis enim. Nulla faucibus metus a ex sodales euismod sed ut metus. Aliquam imperdiet sed augue eget accumsan. Sed et dolor posuere, scelerisque lacus sed, eleifend neque. Donec tempus egestas ultricies. Pellentesque diam nisl, condimentum sit amet lectus gravida, faucibus posuere nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.							
+							</p>
+						</article>
+					:
+						<p>Loading...</p>
 				}
 			</article>
 		</div>

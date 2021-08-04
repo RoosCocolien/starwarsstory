@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
+import { ButtonStyle, FooterStyle } from '../styles/App.styles';
 
 const Footer = () => {
 	return (
-		<div className="Footer">
+		<FooterStyle>
 			<p>
 				Made by Roos Cocolien, click
-				<Link to='/about'>
-					<button>
-						here
-					</button>
-				</Link>
-				 for more info.
+					<Link to='/about'>
+						<ButtonStyle>
+								here
+						</ButtonStyle>
+					</Link>
+					for more info.
 			</p>
-		</div>
+		</FooterStyle>
 	)
 }
 

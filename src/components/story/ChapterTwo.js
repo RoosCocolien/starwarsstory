@@ -18,15 +18,15 @@ const ChapterTwo = (props) => {
 		console.log('end: ', starshipData);
 	}, []);
 
-	const showData = () => {
-		console.log('showData starship: ', starshipData);
-	}
+	// const showData = () => {
+	// 	console.log('showData starship: ', starshipData);
+	// }
 
 	return (
 		<div className="ChapterTwo">
 			<article>
 				<h1>Chapter Two - on board of the starship</h1>
-				<button onClick={showData}>showData</button>
+				{/* <button onClick={showData}>showData</button> */}
 			</article>
 			{!starshipData.name &&
 				<p>Loading...</p>
