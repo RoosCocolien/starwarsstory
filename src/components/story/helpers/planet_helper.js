@@ -14,22 +14,22 @@ const createPlanetsList = () => {
 		},
 		{
 			src : Bespin,
-			url : "https://swapi.dev/api/planets/6",
+			url : "https://swapi.dev/api/planets/6/",
 			name: "Bespin"
 		},
 		{
 			src : Endor,
-			url : "https://swapi.dev/api/planets/7",
+			url : "https://swapi.dev/api/planets/7/",
 			name: "Endor"
 		},
 		{
 			src : Naboo,
-			url : "https://swapi.dev/api/planets/8",
+			url : "https://swapi.dev/api/planets/8/",
 			name: "Naboo"
 		},
 		{
 			src : Utapau,
-			url : "https://swapi.dev/api/planets/12",
+			url : "https://swapi.dev/api/planets/12/",
 			name: "Utapau"
 		}	
 	];
