@@ -1,4 +1,4 @@
-const ChapterThree = () => {
+const ChapterThree = (props) => {
 	return (
 		<div className="ChapterThree">
 			<article>

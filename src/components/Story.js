@@ -78,7 +78,7 @@ const Story = () => {
 				</div>
 			}
 			{currChapter === 1 &&
-				<ChapterOne characterOne={currCharacterOne} characterTwo={currCharacterOne}/>
+				<ChapterOne characterOne={currCharacterOne} characterTwo={currCharacterTwo}/>
 			}
 			{currChapter === 2 &&
 				<ChapterTwo starship={currStarship}/>

@@ -1,4 +1,6 @@
-const ChapterTwo = () => {
+
+
+const ChapterTwo = (props) => {
 	return (
 		<div className="ChapterTwo">
 			<article>

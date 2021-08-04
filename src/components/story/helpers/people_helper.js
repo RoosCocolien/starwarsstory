@@ -13,47 +13,47 @@ const createPeopleList = () => {
 	const people = [
 		{
 			src : LukeSkywalker,
-			url: "https://swapi.co/api/people/1/",
+			url: "https://swapi.dev/api/people/1/",
 			name : "Luke SkyWalker"
 		},
 		{
 			src : C3PO,
-			url: "https://swapi.co/api/people/2/",
+			url: "https://swapi.dev/api/people/2/",
 			name : "C3-PO"
 		},
 		{
 			src : R2D2,
-			url: "https://swapi.co/api/people/3/",
+			url: "https://swapi.dev/api/people/3/",
 			name : "R2-D2"
 		},
 		{
 			src : DarthVader,
-			url: "https://swapi.co/api/people/4/",
+			url: "https://swapi.dev/api/people/4/",
 			name : "Darth Vader"
 		},
 		{
 			src : Leia,
-			url: "https://swapi.co/api/people/5/",
+			url: "https://swapi.dev/api/people/5/",
 			name : "Leia"
 		},
 		{
 			src : ObiWanKenobi,
-			url: "https://swapi.co/api/people/10/",
+			url: "https://swapi.dev/api/people/10/",
 			name : "Obi-Wan Kenobi"
 		},
 		{
 			src : Chewbacca,
-			url: "https://swapi.co/api/people/13/",
+			url: "https://swapi.dev/api/people/13/",
 			name : "Chewbacca"
 		},
 		{
 			src : HanSolo,
-			url: "https://swapi.co/api/people/14/",
+			url: "https://swapi.dev/api/people/14/",
 			name : "Han Solo"
 		},
 		{
 			src : MasterYoda,
-			url: "https://swapi.co/api/people/20/",
+			url: "https://swapi.dev/api/people/20/",
 			name : "Master Yoda"
 		}
 	];
