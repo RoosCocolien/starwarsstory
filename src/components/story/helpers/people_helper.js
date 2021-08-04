@@ -34,7 +34,7 @@ const createPeopleList = () => {
 		{
 			src : Leia,
 			url: "https://swapi.dev/api/people/5/",
-			name : "Leia"
+			name : "Leia Organa"
 		},
 		{
 			src : ObiWanKenobi,

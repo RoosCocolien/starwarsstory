@@ -55,7 +55,7 @@ const Story = () => {
 	};
 
 	return (
-		<div className="App">
+		<article>
 			{currChapter === 0 &&
 				<div className="Chapter">
 					<Introduction />
@@ -94,7 +94,7 @@ const Story = () => {
 					Next
 				</ButtonStyle>
 			}
-		</div>
+		</article>
 	);
 };
 

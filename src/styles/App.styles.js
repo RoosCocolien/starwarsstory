@@ -61,10 +61,38 @@ export const FooterStyle = styled.footer`
 	width: 100%;
 	position: absolute;
 	margin-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 	font-size: 0.8em;
 	color: rgb(160,160,160);
 	height: 100px;
 `
+
+export const HomeStyle = styled.header`
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	margin-left: 20px;
+	margin-right: 20px;
+	h1 {
+		font-size: 8em;
+	}
+	@media(max-width: 600px) {
+		font-size: 0.5em;
+	}
+`;
+
+export const ArticleStyle = styled.article`
+	margin-left: 20px;
+	margin-right: 20px;
+	@media(max-width:600px) {
+		h2 {
+			font-size: 1.5em;
+		}
+	}
+`;
 
 export const SlideshowWrapper = styled.article`
 	color: black;

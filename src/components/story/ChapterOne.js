@@ -1,5 +1,6 @@
 // import fetchData from "../../utils/Api";
 import React, { useEffect, useState } from "react";
+import { ArticleStyle } from "../../styles/App.styles";
 
 const ChapterOne = (props) => {
 	const [characterOneData, setCharacterOneData] = useState({});
@@ -53,8 +54,7 @@ const ChapterOne = (props) => {
 	}
 
 	return (
-		<div className="ChapterOne">
-			<article>
+		<ArticleStyle>
 				<section>
 					<h1>Chapter 1: The heroes pack their bags</h1>
 					<p>
@@ -83,7 +83,7 @@ const ChapterOne = (props) => {
 				}
 				{(homePlanetOne.name && homePlanetTwo.name)
 					?
-						<article className="paragraphStory">
+					<article className="paragraphStory">
 							<p>Home World {characterOneData.name} is {homePlanetOne.name}</p>
 							<p>Home World {characterTwoData.name} is {homePlanetTwo.name}</p>
 							<p>
@@ -91,10 +91,9 @@ const ChapterOne = (props) => {
 							</p>
 						</article>
 					:
-						<p>Loading...</p>
+					<p>Loading...</p>
 				}
-			</article>
-		</div>
+		</ArticleStyle>
 	);
 };
 

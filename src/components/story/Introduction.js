@@ -1,5 +1,9 @@
+import { ArticleStyle } from '../../styles/App.styles';
+
 const Introduction = () => {
 	return (
+		<ArticleStyle>
+
 		<div className="Introduction">
 			<article>
 				<section>
@@ -15,14 +19,15 @@ const Introduction = () => {
 				</section>
 				<section>
 					<h2>Instructions:</h2>
-					<ul>
+					<p>
 						<li>Pick 2 Characters</li>
 						<li>Pick 1 Starship</li>
 						<li>Pick 1 Planet</li>
-					</ul>
+					</p>
 				</section>
 			</article>
 		</div>
+		</ArticleStyle>
 	);
 };
 

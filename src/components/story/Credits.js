@@ -5,15 +5,24 @@ const Credits = () => {
 				<h1>Credits</h1>
 				<p>
 					With thanks to:
+					<br/><br/>
 					Luke Skywalker
+					<br/>
 					C-3PO
+					<br/>
 					R2-D2
+					<br/>
 					Darth Vader
-					Leia
+					<br/>
+					Leia Organa
+					<br/>
 					Obi-Wan Kenobi
+					<br/>
 					Chewbacca
+					<br/>
 					Han Solo
-					Yoda
+					<br/>
+					Master Yoda
 				</p>
 			</article>
 		</div>
