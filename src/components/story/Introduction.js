@@ -14,7 +14,7 @@ const Introduction = () => {
 					</p>
 				</section>
 				<section>
-					<h3>Instructions:</h3>
+					<h2>Instructions:</h2>
 					<ul>
 						<li>Pick 2 Characters</li>
 						<li>Pick 1 Starship</li>

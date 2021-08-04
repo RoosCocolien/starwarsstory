@@ -8,10 +8,9 @@ const Navigation = () => {
 		<Menu >
 			<Menu.Item as={Link} to="/">
 				<img src={logo} alt="StarWarsLogo"/>
-				Home
 			</Menu.Item>
 			<ButtonStyle>
-				<Menu.Item as={Link} to="/about">
+				<Menu.Item as={Link} to="/about" position="right">
 					About
 				</Menu.Item>
 			</ButtonStyle>
