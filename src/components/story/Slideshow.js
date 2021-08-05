@@ -49,6 +49,7 @@ const People = (props) => {
 					<p>
 						<i className="arrow slideButtonLeft" onClick={previousImage}></i>
 						<i className="arrow slideButtonRight" onClick={nextImage}></i>
+						<br/>
 						{props.items[imageIndex].name}
 					</p>
 				</figure>

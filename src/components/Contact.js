@@ -3,9 +3,11 @@
 	In further development I will create a contact form.
 */
 
+import { ArticleStyle } from "../styles/App.styles";
+
 const Contact = () => {
 	return (
-		<div className="App">
+		<ArticleStyle>
 			<h1>Contact</h1>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non pharetra tellus, eu euismod sem. Suspendisse magna libero, posuere eu suscipit sit amet, cursus quis enim. Nulla faucibus metus a ex sodales euismod sed ut metus. Aliquam imperdiet sed augue eget accumsan. Sed et dolor posuere, scelerisque lacus sed, eleifend neque. Donec tempus egestas ultricies. Pellentesque diam nisl, condimentum sit amet lectus gravida, faucibus posuere nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
@@ -16,7 +18,7 @@ const Contact = () => {
 			<p>
 				E-mail: contact@rooscocolien.com
 			</p>
-		</div>
+		</ArticleStyle>
 	);
 };
 
