@@ -1,3 +1,8 @@
+/*
+	Contact component
+	In further development I will create a contact form.
+*/
+
 const Contact = () => {
 	return (
 		<div className="App">

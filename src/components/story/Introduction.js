@@ -3,9 +3,6 @@ import { ArticleStyle } from '../../styles/App.styles';
 const Introduction = () => {
 	return (
 		<ArticleStyle>
-
-		<div className="Introduction">
-			<article>
 				<section>
 					<h1>
 						Create your own Star Wars Story
@@ -25,8 +22,6 @@ const Introduction = () => {
 						<li>Pick 1 Planet</li>
 					</p>
 				</section>
-			</article>
-		</div>
 		</ArticleStyle>
 	);
 };

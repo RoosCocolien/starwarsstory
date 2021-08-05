@@ -1,8 +1,13 @@
+/*
+	ChapterTwo component
+	This chapter contains the same functionality as ChapterOne.
+*/
+
 import React, { useEffect, useState } from "react";
 import { ArticleStyle } from "../../styles/App.styles";
 
 const ChapterThree = (props) => {
-	console.log('props: ' + props.planet.url);
+	// console.log('props: ' + props.planet.url);
 	const [planetData, setPlanetData] = useState({});
 
 	useEffect(() => {
@@ -12,9 +17,9 @@ const ChapterThree = (props) => {
 			let planet = await Promise.resolve(data);
 			setPlanetData(planet);
 		}
-		console.log('props.url: ', props.planet.url);
+		// console.log('props.url: ', props.planet.url);
 		fetchPlanetData(props.planet.url);
-		console.log('end: ', planetData);
+		// console.log('end: ', planetData);
 	}, []);
 
 	// const showData = () => {

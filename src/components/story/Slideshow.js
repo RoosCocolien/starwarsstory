@@ -1,6 +1,19 @@
+/*
+	The Slideshow Component
+
+	states:
+	- imageIndex refers to the current displayed image
+	
+	The length of the receiving object array is varibale, so I use props.items.length to check
+	if I reach the end. Then it will go automatically to the beginning.
+
+	The submit button fire selectCurrentItem. In selectCurrentItem the current displayed image
+	is "selected", the index of the image is stored in imageIndex, so that is send to the
+	callback function.
+*/
+
 import React, { useState } from 'react';
 import { SlideshowWrapper } from '../../styles/App.styles';
-import { Card, Grid } from 'semantic-ui-react';
 
 const People = (props) => {
 	//create states
@@ -23,7 +36,7 @@ const People = (props) => {
 	}
 
 	const selectCurrentItem = () => {
-		console.log('Selecting current image: ' + imageIndex);
+		// console.log('Selecting current image: ' + imageIndex);
 		props.onChange(props.items[imageIndex]);
 	}
 	
@@ -36,7 +49,7 @@ const People = (props) => {
 					<p>
 						<i className="arrow slideButtonLeft" onClick={previousImage}></i>
 						<i className="arrow slideButtonRight" onClick={nextImage}></i>
-						<div className="textItem">{props.items[imageIndex].name}</div>
+						{props.items[imageIndex].name}
 					</p>
 				</figure>
 

@@ -1,3 +1,16 @@
+/*
+	The styled components:
+	- GlobalStyle
+	- ButtonStyle
+	- FooterStyle
+	- HomeStyle (header)
+	- ArticleStyle
+	- SlideshowWrapper
+
+	In further development if this file becomes bigger, I might split it up
+	into sections.
+*/
+
 import styled, { createGlobalStyle } from 'styled-components';
 import backgroundImage from '../images/2k_stars.jpeg';
 import { device } from './device';

@@ -1,1 +1,7 @@
-//move API logic to this file
+/*
+	This is meant for writing the API request.
+	One request which takes an url and
+	returns the data.
+
+	In this file I will also handle fetch errors.
+*/

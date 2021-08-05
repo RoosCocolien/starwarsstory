@@ -1,3 +1,7 @@
+/*
+	Scroll to Top functionality
+*/
+
 const scrollToTop = () => {
 	let root = document.documentElement;
 

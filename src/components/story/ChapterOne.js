@@ -1,6 +1,25 @@
-// import fetchData from "../../utils/Api";
+/*
+	ChapterOne component
+	ArticleStyle component is imported in every chapter.
+	In further development I will rewrite the fetching functionality in a seperate file
+	to avoid writing repeating code and to handle errors. Then I could import it like this:
+	// import fetchData from "../../utils/Api";
+	and the code will be cleaner.
+	
+	I get warnings in the useEffect hook which I need to further investigate.
+	The "showData" is commented out, and is meant for testing. In further development
+	I will move it to a different branch.
+
+	Loading: in further development I will add a light saber as a loading animation.
+*/
+
 import React, { useEffect, useState } from "react";
 import { ArticleStyle } from "../../styles/App.styles";
+
+const handleError = (res) => {
+	const message = "Error: " + res.status;
+	throw new Error(message);
+}
 
 const ChapterOne = (props) => {
 	const [characterOneData, setCharacterOneData] = useState({});
@@ -11,6 +30,9 @@ const ChapterOne = (props) => {
 	useEffect(() => {
 		async function fetchHomePlanetOne(url) {
 			let res = await fetch(url);
+			if (!res.ok) {
+				handleError(res);
+			}
 			let data = await res.json();
 			let homePlanetData = await Promise.resolve(data);
 			setHomePlanetOne(homePlanetData);
@@ -35,23 +57,23 @@ const ChapterOne = (props) => {
 			let res = await fetch(url);
 			let data = await res.json();
 			let data2 = await Promise.resolve(data);
-			console.log(data2);
+			// console.log(data2);
 			setCharacterTwoData(data2);
 			fetchHomePlanetTwo(data2.homeworld);
 		}
 
-		console.log('url: ', props.characterOne.url);
+		// console.log('url: ', props.characterOne.url);
 		fetchCharacterOne(props.characterOne.url);
 		fetchCharacterTwo(props.characterTwo.url);
-		console.log('end: ', characterOneData);
-		console.log('end: ', characterTwoData);
+		// console.log('end: ', characterOneData);
+		// console.log('end: ', characterTwoData);
 		
 	}, []);
 
-	const showData = () => {
-		console.log('showData characterOne: ', characterOneData);
-		console.log('showData characterTwo: ', characterTwoData);
-	}
+	// const showData = () => {
+	// 	console.log('showData characterOne: ', characterOneData);
+	// 	console.log('showData characterTwo: ', characterTwoData);
+	// }
 
 	return (
 		<ArticleStyle>

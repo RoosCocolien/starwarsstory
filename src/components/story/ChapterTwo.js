@@ -1,3 +1,8 @@
+/*
+	ChapterTwo component
+	This chapter contains the same functionality as ChapterOne.
+*/
+
 import React, {useEffect, useState } from "react";
 import { ArticleStyle } from "../../styles/App.styles";
 
@@ -5,7 +10,7 @@ const ChapterTwo = (props) => {
 	const [starshipData, setStarshipData] = useState({});
 
 	useEffect(() => {
-		console.log(props.starship.url);
+		// console.log(props.starship.url);
 
 		async function fetchStarship(url) {
 			let res = await fetch(url);
@@ -14,9 +19,9 @@ const ChapterTwo = (props) => {
 			setStarshipData(starshipData);
 		}
 
-		console.log('url: ' + props.starship.url);
+		// console.log('url: ' + props.starship.url);
 		fetchStarship(props.starship.url);
-		console.log('end: ', starshipData);
+		// console.log('end: ', starshipData);
 	}, []);
 
 	// const showData = () => {

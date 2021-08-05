@@ -9,7 +9,7 @@ const size = {
 	desktop: '2560px'
 };
 
-//create media queries
+//to create media queries
 export const device = {
 	mobileS: `max-width: ${size.mobileS}`,
 	mobileM: `max-width: ${size.mobileM}`,
