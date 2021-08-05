@@ -28,11 +28,11 @@ import { GlobalFonts } from './fonts/fonts';
 
 //components
 import Navigation from './components/Navigation';
-import Home from './components/Home';
+import Home from './pages/Home';
 import Footer from './components/Footer';
 import Story from './components/Story';
-import About from './components/About';
-import Contact from './components/Contact';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 
 function App() {
