@@ -7,8 +7,8 @@
 	- ArticleStyle
 	- SlideshowWrapper
 
-	In further development if this file becomes bigger, I might split it up
-	into sections.
+	In further development I would move specific styles used
+	in specific components to the component file.
 */
 
 import styled, { createGlobalStyle } from 'styled-components';

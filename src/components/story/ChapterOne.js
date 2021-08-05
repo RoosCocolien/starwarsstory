@@ -10,16 +10,11 @@
 	The "showData" is commented out, and is meant for testing. In further development
 	I will move it to a different branch.
 
-	Loading: in further development I will add a light saber as a loading animation.
+	Loading: I would like to add a light saber as a loading animation.
 */
 
 import React, { useEffect, useState } from "react";
 import { ArticleStyle } from "../../styles/App.styles";
-
-const handleError = (res) => {
-	const message = "Error: " + res.status;
-	throw new Error(message);
-}
 
 const ChapterOne = (props) => {
 	const [characterOneData, setCharacterOneData] = useState({});
@@ -29,45 +24,40 @@ const ChapterOne = (props) => {
 
 	useEffect(() => {
 		async function fetchHomePlanetOne(url) {
-			let res = await fetch(url);
-			if (!res.ok) {
-				handleError(res);
-			}
-			let data = await res.json();
-			let homePlanetData = await Promise.resolve(data);
-			setHomePlanetOne(homePlanetData);
+			await fetch(url)
+			.then((result) => result.json())
+			.then((data) => {
+				setHomePlanetOne(data);
+			})
 		}
 
 		async function fetchHomePlanetTwo(url) {
-			let res = await fetch(url);
-			let data = await res.json();
-			let homePlanetData = await Promise.resolve(data);
-			setHomePlanetTwo(homePlanetData);
+			await fetch(url)
+			.then((result) => result.json())
+			.then((data) => {
+				setHomePlanetTwo(data);
+			})
 		}
 
 		async function fetchCharacterOne(url) {
-			let res2 = await fetch(url);
-			let data2 = await res2.json();
-			let data3 = await Promise.resolve(data2);
-			setCharacterOneData(data3);
-			fetchHomePlanetOne(data3.homeworld);
+			await fetch(url)
+			.then((result) => result.json())
+			.then((data) => {
+				setCharacterOneData(data);
+				fetchHomePlanetOne(data.homeworld);
+			})
 		}
 
 		async function fetchCharacterTwo(url) {
-			let res = await fetch(url);
-			let data = await res.json();
-			let data2 = await Promise.resolve(data);
-			// console.log(data2);
-			setCharacterTwoData(data2);
-			fetchHomePlanetTwo(data2.homeworld);
+			await fetch(url)
+			.then((result) => result.json())
+			.then((data) => {
+				setCharacterTwoData(data);
+				fetchHomePlanetTwo(data.homeworld);
+			})
 		}
-
-		// console.log('url: ', props.characterOne.url);
 		fetchCharacterOne(props.characterOne.url);
 		fetchCharacterTwo(props.characterTwo.url);
-		// console.log('end: ', characterOneData);
-		// console.log('end: ', characterTwoData);
-		
 	}, []);
 
 	// const showData = () => {

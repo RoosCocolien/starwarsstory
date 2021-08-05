@@ -7,19 +7,17 @@ import React, { useEffect, useState } from "react";
 import { ArticleStyle } from "../../styles/App.styles";
 
 const ChapterThree = (props) => {
-	// console.log('props: ' + props.planet.url);
 	const [planetData, setPlanetData] = useState({});
 
 	useEffect(() => {
 		async function fetchPlanetData(url) {
-			let res = await fetch(url);
-			let data = await res.json();
-			let planet = await Promise.resolve(data);
-			setPlanetData(planet);
+			await fetch(url)
+			.then((result) => result.json())
+			.then((data) => {
+				setPlanetData(data);
+			})
 		}
-		// console.log('props.url: ', props.planet.url);
 		fetchPlanetData(props.planet.url);
-		// console.log('end: ', planetData);
 	}, []);
 
 	// const showData = () => {
