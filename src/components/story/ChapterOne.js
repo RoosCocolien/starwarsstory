@@ -7,6 +7,9 @@
 	and the code will be cleaner.
 	
 	I get warnings in the useEffect hook which I need to further investigate.
+	I probably need to break this into separate useEffects so I keep each one
+	isolated, to make sure that each useEffect has its own responsibilities.
+
 	The "showData" is commented out, and is meant for testing. In further development
 	I will move it to a different branch.
 

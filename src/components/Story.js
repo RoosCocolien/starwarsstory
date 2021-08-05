@@ -13,8 +13,11 @@
 
 	createPeopleLists, createStarshipsList and createPlanetLists are functions
 	which create the object array in a particular format accepted by the Slideshow component.
+	It contains an image, the url for the API fetch later on, and the name.
 	Length of the object array is variable. It is possible to add objects which correspond
 	with the Star Wars API.
+	The selected objects from the Lists are being send to the Chapters in which I make the
+	api call.
 
 	scrollToTop is a function which scrolls back to the top of the page after a button
 	is clicked navigating to a different route.
